@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("3_kacjc")
 id = 0
-next = 0
+next = 4
 character = ExtResource("1_vmlnq")
 character_mood = 2
 text = "Ceci est un troisième dialogue."

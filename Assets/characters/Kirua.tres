@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Scripts/CharacterData.gd" id="1_r7p7n"]
+
+[resource]
+script = ExtResource("1_r7p7n")
+name = "Kirua"
+spriteFolder = ""
+color = Color(0, 0, 1, 1)
+love = -5

@@ -1,7 +1,7 @@
 extends Resource
 class_name DialogData
 
-enum CharacterMood {HAPPY, SAD, ANGRY, OTHER}
+enum CharacterMood {HAPPY=0, SAD=1, ANGRY=2, OTHER=3}
 
 @export var id: int
 @export var next: int

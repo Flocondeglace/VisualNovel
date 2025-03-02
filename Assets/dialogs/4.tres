@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="DialogData" load_steps=8 format=3 uid="uid://c4u6swuu4dl7c"]
+
+[ext_resource type="Resource" path="res://Assets/characters/Kirua.tres" id="1_ibk6b"]
+[ext_resource type="Script" path="res://Scripts/ChoiceData.gd" id="2_t6yic"]
+[ext_resource type="Script" path="res://Scripts/ActionData.gd" id="3_xdrsd"]
+[ext_resource type="Script" path="res://Scripts/DialogData.gd" id="4_i6bwo"]
+
+[sub_resource type="Resource" id="Resource_0trak"]
+script = ExtResource("3_xdrsd")
+action = 0
+params = [1.0]
+
+[sub_resource type="Resource" id="Resource_g3f52"]
+script = ExtResource("2_t6yic")
+text = "choix 1 "
+actions = Array[ExtResource("3_xdrsd")]([SubResource("Resource_0trak")])
+
+[sub_resource type="Resource" id="Resource_7qsn3"]
+script = ExtResource("2_t6yic")
+text = "choix 2"
+actions = Array[ExtResource("3_xdrsd")]([])
+
+[resource]
+script = ExtResource("4_i6bwo")
+id = 4
+next = 2
+character = ExtResource("1_ibk6b")
+character_mood = 0
+text = "Dialog importé depuis json !"
+choices = Array[ExtResource("2_t6yic")]([SubResource("Resource_g3f52"), SubResource("Resource_7qsn3")])
