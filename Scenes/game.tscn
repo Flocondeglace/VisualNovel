@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckc3nyh87hfps"]
+
+[ext_resource type="Script" path="res://Scripts/DialogManager.gd" id="1_erj4e"]
+[ext_resource type="PackedScene" uid="uid://ctfdg7113fa48" path="res://Scenes/dialog.tscn" id="2_qfmdu"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 315.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DialogManager" type="Node2D" parent="." node_paths=PackedStringArray("dialog")]
+script = ExtResource("1_erj4e")
+folder_dialog = "res://Assets/dialogs"
+dialog = NodePath("Dialog")
+
+[node name="Dialog" parent="DialogManager" instance=ExtResource("2_qfmdu")]

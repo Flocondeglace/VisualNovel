@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctfdg7113fa48"]
+
+[ext_resource type="Script" path="res://Scripts/Dialog.gd" id="1_ni5fb"]
+[ext_resource type="Resource" uid="uid://dfrjoff45ivbg" path="res://Assets/characters/perso1.tres" id="2_a3ipn"]
+[ext_resource type="Theme" uid="uid://80ujm46uplmf" path="res://Themes/theme.tres" id="3_3g5uc"]
+[ext_resource type="Texture2D" uid="uid://bhbeqqyawhi1n" path="res://icon.svg" id="4_huh4a"]
+
+[node name="Character" type="Node2D" node_paths=PackedStringArray("sprite", "label", "dialog", "text_dialog", "background_dialog")]
+script = ExtResource("1_ni5fb")
+character_data = ExtResource("2_a3ipn")
+sprite = NodePath("HSplitContainer/VSplitContainer/Sprite")
+label = NodePath("HSplitContainer/VSplitContainer/Label")
+dialog = NodePath("HSplitContainer/BackgroundDialog/Dialog")
+text_dialog = NodePath("HSplitContainer/BackgroundDialog/Dialog/TextDialog")
+background_dialog = NodePath("HSplitContainer/BackgroundDialog")
+
+[node name="HSplitContainer" type="HBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1147.0
+offset_bottom = 311.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_3g5uc")
+
+[node name="VSplitContainer" type="VBoxContainer" parent="HSplitContainer"]
+layout_mode = 2
+
+[node name="Sprite" type="TextureRect" parent="HSplitContainer/VSplitContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("4_huh4a")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HSplitContainer/VSplitContainer"]
+layout_mode = 2
+text = "Name"
+
+[node name="BackgroundDialog" type="ColorRect" parent="HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0, 0, 0.427451, 1)
+
+[node name="Dialog" type="VBoxContainer" parent="HSplitContainer/BackgroundDialog"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextDialog" type="RichTextLabel" parent="HSplitContainer/BackgroundDialog/Dialog"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Texte intial pour tester."

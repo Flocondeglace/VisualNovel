@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="DialogData" load_steps=8 format=3 uid="uid://do4ga4ah2eujg"]
+
+[ext_resource type="Resource" uid="uid://b38gp6my454ro" path="res://Assets/characters/perso2.tres" id="1_4dae7"]
+[ext_resource type="Script" path="res://Scripts/ActionData.gd" id="2_4nwdh"]
+[ext_resource type="Script" path="res://Scripts/DialogData.gd" id="2_hj71r"]
+[ext_resource type="Script" path="res://Scripts/ChoiceData.gd" id="2_pkqb5"]
+[ext_resource type="Resource" uid="uid://bxtrxgeaxircf" path="res://Assets/actions/more_love.tres" id="4_fy4oe"]
+
+[sub_resource type="Resource" id="Resource_0ha4u"]
+script = ExtResource("2_4nwdh")
+action = 1
+params = [2]
+
+[sub_resource type="Resource" id="Resource_2uwe3"]
+script = ExtResource("2_pkqb5")
+text = "Je choisie"
+actions = Array[ExtResource("2_4nwdh")]([SubResource("Resource_0ha4u"), ExtResource("4_fy4oe")])
+
+[resource]
+script = ExtResource("2_hj71r")
+id = 0
+next = 1
+character = ExtResource("1_4dae7")
+character_mood = 0
+text = "Ceci est le tout premier dialogue."
+choices = Array[ExtResource("2_pkqb5")]([SubResource("Resource_2uwe3")])
